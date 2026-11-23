@@ -21,15 +21,17 @@
  */
 
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * @todo       Remove all closures from tests and refactor as methods or functions
  * @category   Zend
  * @package    Zend_Stdlib
  * @subpackage UnitTests
- * @group      Zend_Stdlib
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
+#[Group('Zend_Stdlib')]
 class Zend_Stdlib_CallbackHandlerTest extends PHPUnit\Framework\TestCase
 {
     protected $args;
