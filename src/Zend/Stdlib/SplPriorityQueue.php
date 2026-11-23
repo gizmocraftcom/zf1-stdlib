@@ -79,13 +79,13 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
      */
     public function toArray()
     {
-        $this->setExtractFlags(self::EXTR_BOTH);
+        $this->setExtractFlags(SplPriorityQueue::EXTR_BOTH);
         $array = array();
         while ($this->valid()) {
             $array[] = $this->current();
             $this->next();
         }
-        $this->setExtractFlags(self::EXTR_DATA);
+        $this->setExtractFlags(SplPriorityQueue::EXTR_DATA);
 
         // Iterating through a priority queue removes items
         foreach ($array as $item) {
@@ -114,12 +114,12 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
     public function __serialize(): array
     {
         $data = array();
-        $this->setExtractFlags(self::EXTR_BOTH);
+        $this->setExtractFlags(SplPriorityQueue::EXTR_BOTH);
         while ($this->valid()) {
             $data[] = $this->current();
             $this->next();
         }
-        $this->setExtractFlags(self::EXTR_DATA);
+        $this->setExtractFlags(SplPriorityQueue::EXTR_DATA);
 
         // Iterating through a priority queue removes items
         foreach ($data as $item) {
